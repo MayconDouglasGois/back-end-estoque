@@ -37,42 +37,48 @@ class branchRepository implements IBranchRepository {
     const verifyAlreadyExist = this.branch.find(i => i.name === name)
     return verifyAlreadyExist
   }
-  findIndex(id: string):number {
-    const filterIndexById = this.branch.findIndex(i => i.id === id)
-    return filterIndexById
+  findbyId(id: string): Branch {
+    const verifyAlreadyExist = this.branch.find(i => i.id === id)
+    return verifyAlreadyExist
   }
+
+
+
   list(): Branch[] {
     const list = this.branch
     return list
   }
   edict({
-    indexId,
     id,
     name,
     cnpj,
     telephone,
     email,
     status,
-    note
+    note,
+    created_at
   }): void {
     
     const data = new Branch
+    const indexId = this.branch.findIndex(i => i.id === id)
 
     Object.assign(data,{
+        id,
         name,
         cnpj,
         status,
         telephone,
         email,
         note,
-        created_at: new Date()
+        created_at
     })
 
-    this.branch.push(data)
+    this.branch.splice(indexId,1,data)
 
   }
   delete(id: string): void {
-    throw new Error("Method not implemented.");
+    const indexId = this.branch.findIndex(i => i.id === id)
+    this.branch.splice(indexId,1)
   }
 }
 

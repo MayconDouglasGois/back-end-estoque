@@ -33,7 +33,6 @@ interface IBranchRepository{
 
 findbyname(name: string):Branch;
 
-findIndex(id: string):number;
 
 list():Branch[];
 edict( {
