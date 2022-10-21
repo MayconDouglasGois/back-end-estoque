@@ -43,7 +43,7 @@ edict( {
   email,
   status,
   note
-}):void
+}: IedictBranchDTO):void
 delete(id: string):void
 }
 export {IBranchRepository, IcreateBranchDTO,IedictBranchDTO }

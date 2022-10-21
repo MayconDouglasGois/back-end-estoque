@@ -1,7 +1,7 @@
 import { branchRepository } from "../../Repositories/BranchRepository";
 import { Request } from "express";
 
-class deleteBranchUseCase {
+class editBranchUseCase {
   private branchRepository: branchRepository;
 
   constructor(BranchRepository: branchRepository) {
@@ -9,17 +9,25 @@ class deleteBranchUseCase {
   }
 
   execute(request: Request) {
-    
-    const {id} = request.body;
+    const { id, name, cnpj, telephone, email, status, note,created_at } = request.body;
 
     const verifyBranchCreated = this.branchRepository.findbyId(id)
 
     if(!verifyBranchCreated){
       throw new Error("Branch id no exist!")
     }
- 
-  
-    this.branchRepository.delete(id)
+
+    const editBranchData = {
+      id,
+      name,
+      cnpj,
+      telephone,
+      email,
+      status,
+      note,
+      created_at
+    };
+    this.branchRepository.edict(editBranchData)
   }
 }
-export { deleteBranchUseCase };
+export { editBranchUseCase };
