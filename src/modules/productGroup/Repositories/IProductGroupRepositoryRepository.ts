@@ -1,4 +1,4 @@
-import { ProductGroup } from "../model/productGroup";
+import { ProductGroup } from "../model/ProductGroup";
 
 
 interface IcreateProductGroupDTO{
@@ -15,7 +15,7 @@ interface IedictProductGroupDTO{
 }
 
 
-interface IProductRepository{
+interface IProductGroupRepository{
    
 create({
     name,
@@ -39,4 +39,4 @@ edict( {
 
 delete(id: string):void
 }
-export {IProductRepository, IcreateProductGroupDTO,IedictProductGroupDTO }
+export {IProductGroupRepository,IcreateProductGroupDTO,IedictProductGroupDTO }

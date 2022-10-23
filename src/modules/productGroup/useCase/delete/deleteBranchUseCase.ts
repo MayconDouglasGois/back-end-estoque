@@ -1,4 +1,4 @@
-import { branchRepository } from "../../Repositories/BranchRepository";
+import { branchRepository } from "../../Repositories/ProductGroupRepository";
 import { Request } from "express";
 
 class deleteBranchUseCase {

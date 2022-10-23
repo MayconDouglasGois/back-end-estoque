@@ -1,4 +1,4 @@
-import { branchRepository } from "../../Repositories/BranchRepository";
+import { branchRepository } from "../../Repositories/ProductGroupRepository";
 import { deleteBranchUseCase } from "./deleteBranchUseCase";
 import { deleteBranchController } from "./deleteBranchController";
 

@@ -1,8 +1,9 @@
-import { ProductGroup } from "../model/productGroup";
-import { IProductRepository } from "./IProductRepository";
 
-class productRepository implements IProductRepository {
-  private static INTANSE: productRepository;
+import { ProductGroup } from "../model/ProductGroup";
+import { IProductGroupRepository } from "./IProductGroupRepositoryRepository";
+
+class productGroupRepository implements IProductGroupRepository {
+  private static INTANSE: productGroupRepository;
 
   private productGroup: ProductGroup[];
 
@@ -10,10 +11,10 @@ class productRepository implements IProductRepository {
     this.productGroup = [];
   }
   public static getInstanse() {
-    if (!productRepository.INTANSE) {
-      productRepository.INTANSE = new productRepository();
+    if (!productGroupRepository.INTANSE) {
+      productGroupRepository.INTANSE = new productGroupRepository();
     }
-    return productRepository.INTANSE;
+    return productGroupRepository.INTANSE;
   }
 
   create({ name, id_parent, type }): void {
@@ -61,4 +62,4 @@ class productRepository implements IProductRepository {
   }
 }
 
-export { productRepository };
+export { productGroupRepository };
