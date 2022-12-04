@@ -13,9 +13,14 @@ services:
       - POSTGRE_DB=estoque
     volumes:
       - pgdata:/data/postgres
+    build:
+      context: .
+      network: host
   app:
-    build: .
-    container_name: name
+    build:
+      context: .
+      network: host
+    container_name: api_estoque
     ports:
       - 3333:3333
     volumes:
